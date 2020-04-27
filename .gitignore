@@ -1,5 +1,5 @@
-/target
-/.mvn
-/.classpath
-/.project
-/.settings
+target
+.mvn
+.classpath
+.project
+.settings
