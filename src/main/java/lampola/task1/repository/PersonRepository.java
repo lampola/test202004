@@ -6,4 +6,5 @@ import lampola.task1.domain.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
+	Person getBySsn(String ssn);
 }

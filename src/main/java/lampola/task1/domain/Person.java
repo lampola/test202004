@@ -1,9 +1,13 @@
 package lampola.task1.domain;
 
-import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -14,6 +18,9 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lampola.task1.enums.Sex;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,5 +45,17 @@ public class Person extends AbstractPersistable<Long> {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @PastOrPresent(message = "Date of birth must be in the past or today")
 	@NotNull(message = "Last name is mandatory")
-    Date dateOfBirth;
+    private Date dateOfBirth;
+    
+    @Enumerated(EnumType.STRING)
+	@NotNull(message = "Sex is mandatory")
+    private Sex sex;
+    
+    @JsonIgnore
+    @OneToMany
+    private List<Marriage> husbands;
+    
+    @JsonIgnore
+    @OneToMany
+    private List<Marriage> wives;
 }

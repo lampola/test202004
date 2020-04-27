@@ -20,6 +20,6 @@ public class PersonController {
 
 	@PostMapping(path = "/persons", consumes = "application/json", produces = "application/json")
 	Person createPerson(@Valid @RequestBody Person person) {
-		return personService.createPerson(person);
+		return personService.create(person);
 	}
 }

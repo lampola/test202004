@@ -30,7 +30,7 @@ public class PersonServiceTest {
 		Person person = TestObjectFactory.getTestPerson();
 		when(personRepository.save(any(Person.class))).thenReturn(person);
 
-		Person createdPerson = personService.createPerson(person);
+		Person createdPerson = personService.create(person);
 
 		assertNotNull(createdPerson.getSsn());
 		assertNotNull(createdPerson.getFirstName());
