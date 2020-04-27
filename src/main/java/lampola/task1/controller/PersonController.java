@@ -1,5 +1,7 @@
 package lampola.task1.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +19,7 @@ public class PersonController {
 	}
 
 	@PostMapping(path = "/persons", consumes = "application/json", produces = "application/json")
-	Person createPerson(@RequestBody Person person) {
+	Person createPerson(@Valid @RequestBody Person person) {
 		return personService.createPerson(person);
 	}
 }

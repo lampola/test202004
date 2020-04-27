@@ -35,6 +35,6 @@ public class PersonServiceTest {
 		assertNotNull(createdPerson.getSsn());
 		assertNotNull(createdPerson.getFirstName());
 		assertNotNull(createdPerson.getLastName());
+		assertNotNull(createdPerson.getDateOfBirth());
 	}
-
 }
