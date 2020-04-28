@@ -1,4 +1,5 @@
 #Task 1
+
 Suunnittele / toteuta liiketoimintaluokat (http://c2.com/cgi/wiki?DomainObject) pieneen järjestelmään, jossa ylläpidetään luonnollisen henkilön perustietoja (tyyliin Väestötietojärjestelmä, https://dvv.fi/vaestotietojarjestelma  )
 
 *        Java back-end
@@ -18,6 +19,7 @@ Suunnittele / toteuta liiketoimintaluokat (http://c2.com/cgi/wiki?DomainObject) 
  
 
 #Task 2
+
 Kirjoita Java-ohjelma yksikkötesteineen, joka selvittää pienimmän määrän numeroita mitä luonnollisessa järjestyksessä mahtuu taulukon eri numeroiden välille.
 
 Esimerkiksi taulukon [ 1, 4, 10 ] oikea vastaus olisi 2, sillä numeroiden 1 ja 4 väliin mahtuu numerot 2 ja 3 ja muiden numeroiden väliin mahtuisi suurempi kappalemäärä numeroita.
