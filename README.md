@@ -1,4 +1,4 @@
-#Task 1
+# Task 1
 
 Suunnittele / toteuta liiketoimintaluokat (http://c2.com/cgi/wiki?DomainObject) pieneen järjestelmään, jossa ylläpidetään luonnollisen henkilön perustietoja (tyyliin Väestötietojärjestelmä, https://dvv.fi/vaestotietojarjestelma  )
 
@@ -18,7 +18,7 @@ Suunnittele / toteuta liiketoimintaluokat (http://c2.com/cgi/wiki?DomainObject) 
 
  
 
-#Task 2
+# Task 2
 
 Kirjoita Java-ohjelma yksikkötesteineen, joka selvittää pienimmän määrän numeroita mitä luonnollisessa järjestyksessä mahtuu taulukon eri numeroiden välille.
 
