@@ -27,7 +27,8 @@ public class Task2ApplicationTest
 			new TestData(new int[] {Integer.MIN_VALUE, Integer.MAX_VALUE}, (long)Integer.MAX_VALUE - (long)Integer.MIN_VALUE - 1L),
 			new TestData(new int[] {2, 4, 6, 8}, 1),
 			new TestData(new int[] {4, 8, 16, 32}, 3),
-			new TestData(new int[] {16, 4, 32, 8}, 3)
+			new TestData(new int[] {16, 4, 32, 8}, 3),
+			new TestData(new int[] {16, 4, 32, 8, 16, 4, 32, 8}, 3)
 	};
 	
 	@Test
