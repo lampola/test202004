@@ -36,4 +36,17 @@ public class MarriageService {
 		
 		return savedMarriage;
 	}
+	
+	@Transactional
+	public Marriage addChild(String fatherSsn, String motherSsn, String childSsn) {
+		Person father = personRepository.getBySsn(fatherSsn);
+		Person mother = personRepository.getBySsn(motherSsn);
+		Person child = personRepository.getBySsn(childSsn);		
+		Marriage marriage = marriageRepository.getByHusbandAndWife(father, mother);
+		
+		marriage.getChildren().add(child);		
+		Marriage savedMarriage = marriageRepository.save(marriage);
+		
+		return savedMarriage;
+	}
 }

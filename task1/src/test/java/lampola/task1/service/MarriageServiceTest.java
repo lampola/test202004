@@ -45,4 +45,21 @@ public class MarriageServiceTest {
 		assertNotNull(createdMarriage.getWifeSsn());
 		assertNotNull(createdMarriage.getStarted());
 	}
+
+	@Test
+	public void testAddChild() {
+		Person father = TestObjectFactory.getTestPerson();
+		Person mother = TestObjectFactory.getTestSpouse();
+		Person child = TestObjectFactory.getTestChild();
+		Marriage marriage = TestObjectFactory.getTestMarriage(father, mother);
+		
+		when(marriageRepository.getByHusbandAndWife(any(Person.class), any(Person.class))).thenReturn(marriage);
+		when(personRepository.getBySsn(father.getSsn())).thenReturn(father);
+		when(personRepository.getBySsn(mother.getSsn())).thenReturn(mother);
+		when(personRepository.getBySsn(child.getSsn())).thenReturn(child);
+		when(marriageRepository.save(any(Marriage.class))).thenReturn(marriage);
+		Marriage updatedMarriage = marriageService.addChild(father.getSsn(), mother.getSsn(), child.getSsn());
+		
+		assertNotNull(updatedMarriage.getChildren());
+	}
 }

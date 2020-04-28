@@ -10,6 +10,7 @@ import lampola.task1.enums.Sex;
 public class TestObjectFactory {
 	private static String HUSBAND_SSN = "123456-6789";
 	private static String WIFE_SSN = "123456-9876";
+	private static String CHILD_SSN = "123456-9999";
 	
 	public static Person getTestPerson() {
 		Person person = new Person();
@@ -32,12 +33,23 @@ public class TestObjectFactory {
 		person.setHusbands(new ArrayList<>());
 		return person;
 	}
+
+	public static Person getTestChild() {
+		Person person = new Person();
+		person.setSsn(CHILD_SSN);
+		person.setFirstName("Ville");
+		person.setLastName("Lampola");
+		person.setDateOfBirth(new Date(2000, 1, 31));
+		person.setSex(Sex.Male);
+		return person;
+	}
 	
 	public static Marriage getTestMarriage(Person husband, Person wife) {
 		Marriage marriage = new Marriage();
+		marriage.setStarted(new Date(1999, 1, 31));
 		marriage.setHusbandSsn(HUSBAND_SSN);
 		marriage.setWifeSsn(WIFE_SSN);
-		marriage.setStarted(new Date(1999, 1, 31));
+		marriage.setChildren(new ArrayList<>());
 		return marriage;
 	}
 }
